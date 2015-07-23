@@ -1,0 +1,2 @@
+/Users/karama/Spbau/diploma/backup-networks.main/protocol/impl/msgpack-c/CMakeFiles/msgpack.dir
+/Users/karama/Spbau/diploma/backup-networks.main/protocol/impl/msgpack-c/CMakeFiles/msgpack-static.dir

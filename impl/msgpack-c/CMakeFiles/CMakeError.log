@@ -1,0 +1,26 @@
+Performing C++ SOURCE FILE Test MSGPACK_ENABLE_GCC_CXX_ATOMIC failed with the following output:
+Change Dir: /Users/karama/Spbau/diploma/backup-networks.main/protocol/impl/msgpack-c/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec274024846/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec274024846.dir/build.make CMakeFiles/cmTryCompileExec274024846.dir/build
+/usr/local/Cellar/cmake/3.0.2/bin/cmake -E cmake_progress_report /Users/karama/Spbau/diploma/backup-networks.main/protocol/impl/msgpack-c/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec274024846.dir/src.cxx.o
+/usr/bin/c++    -DMSGPACK_ENABLE_GCC_CXX_ATOMIC   -o CMakeFiles/cmTryCompileExec274024846.dir/src.cxx.o -c /Users/karama/Spbau/diploma/backup-networks.main/protocol/impl/msgpack-c/CMakeFiles/CMakeTmp/src.cxx
+/Users/karama/Spbau/diploma/backup-networks.main/protocol/impl/msgpack-c/CMakeFiles/CMakeTmp/src.cxx:2:10: fatal error: 'bits/atomicity.h' file not found
+#include <bits/atomicity.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec274024846.dir/src.cxx.o] Error 1
+make: *** [cmTryCompileExec274024846/fast] Error 2
+
+Source file was:
+
+#include <bits/atomicity.h>
+int atomic_sub(int i) { return __gnu_cxx::__exchange_and_add(&i, -1) - 1; }
+int atomic_add(int i) { return __gnu_cxx::__exchange_and_add(&i, 1) + 1; }
+int main(int argc, char * argv[])
+{
+    atomic_sub(1);
+    atomic_add(1);
+}
+
